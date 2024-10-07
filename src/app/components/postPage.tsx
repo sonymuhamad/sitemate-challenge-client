@@ -33,7 +33,7 @@ export default function PostsPage() {
       try {
         await axios.put<Post>(`${API_URL}/${posts[editingIndex].id}`, { title,description });
         const updatedPosts = posts.map((post, index) =>
-          index === editingIndex ? { ...post, title, } : post
+          index === editingIndex ? { ...post, title,description } : post
         );
         setPosts(updatedPosts);
         setEditingIndex(null);
