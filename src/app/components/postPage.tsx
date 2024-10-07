@@ -31,7 +31,7 @@ export default function PostsPage() {
     if (editingIndex !== null) {
       // Update post
       try {
-        await axios.put<Post>(`${API_URL}/${posts[editingIndex].id}`, { title });
+        await axios.put<Post>(`${API_URL}/${posts[editingIndex].id}`, { title,description });
         const updatedPosts = posts.map((post, index) =>
           index === editingIndex ? { ...post, title, } : post
         );
